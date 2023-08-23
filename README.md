@@ -1,7 +1,7 @@
 # HotClip
 
 - This script will memories text you copy and whenever you press a hotkey
-it will save the text to a file
+it will save it to a file
 
 ## Modules to install
 
@@ -20,7 +20,7 @@ it will save the text to a file
 $ ./main.py
 ```
 
-- Use the `-h` flag to see the help message with for more details
+- Use the `-h` flag to see the help message for more details
 
 ```bash
 $ ./main.py -h
