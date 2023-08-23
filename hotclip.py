@@ -8,6 +8,46 @@ from time import sleep
 import argparse
 
 
+parser = argparse.ArgumentParser(
+    formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+parser.add_argument(
+    '--hotkey', '-k',
+    default="<ctrl>+<alt>+i",
+    help='Hotkey to listen for'
+)
+parser.add_argument(
+    '--delay', '-d',
+    type=float,
+    default=0.4,
+    help='Delay between clipboard checks'
+)
+parser.add_argument(
+    '--output', '-o',
+    default='notes.txt',
+    help='Output file to append saved text to'
+)
+parser.add_argument(
+    '--print', '-p',
+    action=argparse.BooleanOptionalAction,
+    default=False,
+    help='Print logs to stdout'
+)
+parser.add_argument(
+    '--test-mode', '-t',
+    action=argparse.BooleanOptionalAction,
+    default=False,
+    help='This mode does not save to file, useful for debugging, use with \
+    -p'
+)
+parser.add_argument(
+    '--listen-mode', '-l',
+    action=argparse.BooleanOptionalAction,
+    default=False,
+    help='This mode prints any pressed key to stdout, useful for picking \
+    hotkeys'
+)
+
+
 def hotkey_handler(file, text, log, isTestMode):
     """It saves passed text variable to the passed file path
 
@@ -49,44 +89,6 @@ def listen_mode():
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(
-        formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument(
-        '--hotkey', '-k',
-        default="<ctrl>+<alt>+i",
-        help='Hotkey to listen for'
-    )
-    parser.add_argument(
-        '--delay', '-d',
-        type=float,
-        default=0.4,
-        help='Delay between clipboard checks'
-    )
-    parser.add_argument(
-        '--output', '-o',
-        default='notes.txt',
-        help='Output file to append saved text to'
-    )
-    parser.add_argument(
-        '--print', '-p',
-        action=argparse.BooleanOptionalAction,
-        default=False,
-        help='Print logs to stdout'
-    )
-    parser.add_argument(
-        '--test-mode', '-t',
-        action=argparse.BooleanOptionalAction,
-        default=False,
-        help='This mode does not save to file, useful for debugging, use with \
-        -p'
-    )
-    parser.add_argument(
-        '--listen-mode', '-l',
-        action=argparse.BooleanOptionalAction,
-        default=False,
-        help='This mode prints any pressed key to stdout, useful for picking \
-        hotkeys'
-    )
     args = parser.parse_args()
     stored_text = None
 
