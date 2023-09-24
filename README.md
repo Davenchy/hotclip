@@ -17,14 +17,14 @@ it will save it to a file
 - Simply run the script
 
 ```bash
-$ ./main.py
+$ ./hotclip.py
 ```
 
 - Use the `-h` flag to see the help message for more details
 
 ```bash
-$ ./main.py -h
-usage: main.py [-h] [--hotkey HOTKEY] [--delay DELAY] [--output OUTPUT] [--print | --no-print | -p]
+$ ./hotclip.py -h
+usage: hotclip.py [-h] [--hotkey HOTKEY] [--delay DELAY] [--output OUTPUT] [--print | --no-print | -p]
                [--test-mode | --no-test-mode | -t] [--listen-mode | --no-listen-mode | -l]
 
 options:
